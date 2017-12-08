@@ -1,5 +1,22 @@
 # Splunk Logging for Java
 
+## Blackbaud
+
+This is a forked repo from [here](https://github.com/splunk/splunk-library-javalogging).
+
+We have updated the build to use gradle and publish in the same way as other blackbaud artifacts.
+The tests for this repo require a local splunk to be running so they have been disabled in build.gradle.
+
+The reason for the fork was to modify the creation of the JSON that is sent to splunk. This is 
+the only change to the actual source and can found this [this file](https://blackbaud.visualstudio.com/Products/_git/splunk-library-javalogging?path=%2Fsrc%2Fmain%2Fjava%2Fcom%2Fsplunk%2Flogging%2FHttpEventCollectorSender.java&version=GBmaster&_a=contents) at line 223 serializeEventInfo method.
+
+In the event that you would like to pull changes from the original repo, do the following:
+
+```
+git remote add upstream https://github.com/splunk/splunk-library-javalogging.git
+git pull upstream master
+```
+
 #### Version 1.5.3
 
 This project provides utilities to easily log data using Splunk's recommended 
